@@ -30,10 +30,28 @@ textarea {
 
   /* COLORS */
   --BGCOLOR: orange;
-  --BGCOLOR-FADE: rbg(252, 220, 160);
+  --BGCOLOR-FADE: rgb(252, 220, 160);
   --BGIMAGE: linear-gradient(to bottom, var(--BGCOLOR), var(--BGCOLOR-FADE));
   --BODY-BGCOLOR: #fff;
   --FONT-COLOR: #000;
+  --BORDER-COLOR: #333;
+  --HIGHLIGHT-COLOR: rgb(51, 178, 51);
+  --LINK-COLOR: #000;
+  --LINK-HOVER: hsla(0, 0%, 0%, 0.6);
+  --LINK-ACTIVE: orange;
+  --HEADER-BGCOLOR: #000;
+  --HEADER-COLOR: #fff;
+  --NAV-BGCOLOR: #fff;
+
+  /* BORDERS */
+  --BORDERS: 1px solid var(--BORDER-COLOR);
+
+  /* STANDARD PADDING */
+  --PADDING-TB: 0.25em;
+  --PADDING-SIDE: 2.5%;
+
+  /* STANDARD MARGIN */
+  --MARGIN: clamp(1em, 2.5vh, 1.5em) 0;
 }
 
 /* || UTILITY */
@@ -48,4 +66,83 @@ textarea {
 
 .center {
   text-align: center;
+}
+
+/* || GENERAL STYLES */
+html {
+  scroll-behavior: smooth;
+  font-size: var(--FS);
+  font-family: var(--FF);
+  background-color: var(--BGCOLOR);
+  background-image: var(--BGIMAGE);
+}
+
+body {
+  background-color: var(--BODY-BGCOLOR);
+  color: var(--FONT-COLOR);
+  min-height: 100vh;
+  max-width: 800px;
+  margin: 0 auto;
+  border-left: var(--BORDERS);
+  border-right: var(--BORDERS);
+  box-shadow: 0 0 10px var(--BORDER-COLOR);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--FF-HEADINGS);
+  letter-spacing: 0.1em;
+}
+
+h2,
+h3 {
+  margin-bottom: 1em;
+  color: var(--HIGHLIGHT-COLOR);
+}
+
+p {
+  line-height: 1.5;
+}
+
+a:any-link {
+  color: var(--LINK-COLOR);
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--LINK-HOVER);
+}
+
+a:active {
+  color: var(--LINK-ACTIVE);
+}
+
+/* || HEADER */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.header__h1 {
+  text-align: center;
+  background-color: var(--HEADER-BGCOLOR);
+  color: var(--HEADER-COLOR);
+  padding: var(--PADDING-TB) var(--PADDING-SIDE);
+}
+
+.header__nav {
+  background-color: var(--NAV-BGCOLOR);
+  border-bottom: var(--BORDERS);
+  font-weight: bold;
+  box-shadow: 0 6px 5px -5px var(--BORDER-COLOR);
+}
+
+.header__ul {
+  padding: var(--PADDING-TB) var(--PADDING-SIDE);
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1rem;
 }
