@@ -253,6 +253,7 @@ a:active {
   border-radius: 15px;
   background-color: var(--HIGHLIGHT-COLOR);
   color: var(--HEADER-COLOR);
+  font-weight: bold;
 }
 
 /* || MENU */
